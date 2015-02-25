@@ -1,2 +1,1 @@
-Nemesis
-=======
+SCRIPTS FOR SERVERS (CENTOS && UBUNTU)
