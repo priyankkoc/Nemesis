@@ -1,0 +1,28 @@
+#how to setup up or add a new-service in windows using powershell script 
+#script to start and stop services in powershell
+#input get the content of the file
+#$i is the counter
+#$service gets the name of the service 
+
+
+$input=Get-Content 'C:\Users\nemesis\Desktop\New Text Document.txt'
+foreach ($i in $input)
+{
+ $service=get-service -Name $i
+    if($service.Status -like "stopped")
+        {
+            start-service -Name $i
+        }
+        else
+            {
+                stop-service -Name $i -Force
+             }
+ }
+ 
+ 
+ 
+ 
+ 
+ New-Service -Name "np" -BinaryPathName "C:\Windows\System32\notepad" -DisplayName "Notepad" -StartupType "Automatic" 
+ 
+ Get-Service -DisplayName "Notepad" | start-service
